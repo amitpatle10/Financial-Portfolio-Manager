@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -13,20 +12,21 @@ public class nifty_50_stocks {
     private String Open;
     private String High;
     private String Low;
-    private int VOLUME;
+
+    private Double OneYearChange;
     private String VALUE;
 
 
     public nifty_50_stocks() {
     }
 
-    public nifty_50_stocks(String SYMBOL, String open, String high, String low, int VOLUME, String VALUE) {
+    public nifty_50_stocks(String SYMBOL, String open, String high, String low, Double OneYearChange, String VALUE) {
 
         this.SYMBOL = SYMBOL;
         Open = open;
         High = high;
         Low = low;
-        this.VOLUME = VOLUME;
+        this.OneYearChange = OneYearChange;
         this.VALUE = VALUE;
     }
 
@@ -64,12 +64,12 @@ public class nifty_50_stocks {
         Low = low;
     }
 
-    public int getVOLUME() {
-        return VOLUME;
+    public Double getOneYearChange() {
+        return OneYearChange;
     }
 
-    public void setVOLUME(int VOLUME) {
-        this.VOLUME = VOLUME;
+    public void setOneYearChange(Double oneYearChange) {
+        OneYearChange = oneYearChange;
     }
 
     public String getVALUE() {
