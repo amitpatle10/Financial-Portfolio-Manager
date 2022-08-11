@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<table class="table table-hover table-bordered">
+    <thead th:class="thead-dark">
+        <tr>
+            <th scope="col">SYMBOL</th>
+            <th scope="col">Open</th>
+            <th scope="col">High</th>
+            <th scope="col">Low</th>
+            <th scope="col">VALUE</th>
+            <th scope="col">OneYearChange(%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="company : ${ListOfCompanies}" >
+            <td scope="row">
+                <span th:text="${company.SYMBOL}">Default</span>
+            </td>
+            <td>
+                <span th:text="${company.Open}">Default</span>
+            </td>
+            <td>
+                <span th:text="${company.High}">Default</span>
+            </td>
+            <td>
+                <span th:text="${company.Low}">Default</span>
+            </td>
+            <td>
+                <span th:text="${company.VALUE}">Default</span>
+            </td>
+            <td>
+                <span th:text="${company.OneYearChange}">Default</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

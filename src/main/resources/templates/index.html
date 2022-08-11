@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Welcome to the Portfolio Manager</h1>
+<div align="center">
+    <a href="/company">List of Companies</a>
+    <a href="/portfolio">Portfolio</a>
+
+</div>
+<div>
+    <form action="/stockbuy" method="post" >
+        <label for="listid">Ticker:</label>
+        <input list="listid" name="ticker">
+        <datalist id="listid"></datalist>
+        <label for="shares">No. of Shares:</label>
+        <input type="text" id="shares" name="shares"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<script th:inline="javascript">
+    let options = '';
+
+    let companies = [[${ListOfCompanies}]];
+
+
+
+    for (let i = 0; i < companies.length; i++) {
+        options += '<option value="' + companies[i].symbol + '" />';
+    }
+    console.log(options);
+    document.getElementById('listid').innerHTML = options;
+</script>
+</body>
+</html>
